@@ -1,9 +1,6 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-// const exerciseRoutes = require("./routes/exercises");
-// const workoutRoutes = require("./routes/workouts");
 const apiRoutes = require("./routes/apiroutes");
 const viewRoutes = require("./routes/htmlroutes");
 
@@ -26,7 +23,6 @@ app.use(express.static("public"));
 
 app.use(apiRoutes);
 app.use(viewRoutes);
-// app.use(workoutRoutes);
 
 app.get("*", function(req, res) {
 res.sendFile(path.join(__dirname, "./public/index.html"));
