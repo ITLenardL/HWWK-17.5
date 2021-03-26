@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/workout',
+    "mongodb+srv://mongoatlas:CJ4eA6Tq8ve2Qvg@cluster0.js2sr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
     useNewUrlParser: true,
     useUnifiedTopology: true,
