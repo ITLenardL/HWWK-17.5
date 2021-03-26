@@ -6,15 +6,19 @@ const bodyParser = require("body-parser");
 // const workoutRoutes = require("./routes/workouts");
 const apiRoutes = require("./routes/apiroutes");
 const viewRoutes = require("./routes/htmlroutes");
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/workout',
+    {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
     useFindAndModify: false
-});
+    }
+);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
